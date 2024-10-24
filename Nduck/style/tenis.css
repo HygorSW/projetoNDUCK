@@ -1,0 +1,367 @@
+body{
+
+    overflow-y: scroll;
+ 
+
+}
+
+
+#buscar{
+  margin-top: 7%;
+  margin-bottom: 1%;
+background-color: #000000ea;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+flex-direction: row;
+}
+
+.navBuscar{
+
+display: flex;
+flex-direction: row;
+width: 50%;
+height: 100%;
+background-color: #fff;
+text-align: center;
+align-items: center;
+justify-content: center;
+
+}
+/* justify-content-end flex-grow-1 pe-3 */
+
+
+.buscaLink{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.buscaLink{
+  padding: 0px 15px;
+  list-style: none;
+}
+
+.buscaLink a{
+  display: flex;
+  text-decoration: none;
+  font-size: 12.5pt;
+  font-weight: 600;
+  color: #111111;
+  position: relative;
+}
+
+.buscaLink a::after{
+  content: '';
+  display: flex;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: -6px;
+  background-color: green;
+  border-radius: 5px;
+  position: absolute;
+  transform: scaleX(0);
+  transition: .5s;
+}
+
+.buscaLink a:hover::after{
+  transform: scaleX(1);
+}
+
+
+
+
+
+#card{
+    margin: 40px;
+
+    
+    
+}
+
+
+
+
+    #linha-card{
+
+      
+      display: flex;
+      flex-direction: row;
+
+    }
+
+    #coluna-card{
+    
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+
+  }
+
+  #coluna-card2{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+.card{
+    
+ 
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgb(10, 10, 10);
+}
+
+@media only screen and (max-width:1078px){
+
+    #collum{
+
+        margin-top: 5%;
+        
+        }
+
+        #coluna-card{
+    
+            display: flex;
+            justify-content: center;
+    
+        }
+        #coluna-card2{
+    
+          display: flex;
+          justify-content: center;
+  
+      }
+
+    #card{
+
+        margin: 3%;
+
+    }
+
+        
+#buscar{
+  margin-top: 10%;
+ 
+}
+        
+
+
+}
+
+@media only screen and (max-width:750px){
+
+    #collum1{
+
+    margin-top: 30%;
+    
+    }
+
+    
+    #linha-card{
+
+      align-items: center;
+        justify-content: center;
+        display: flex;
+      
+    }
+
+    #coluna-card{
+
+      align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+      
+    }
+    #coluna-card2{
+
+      align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+      
+    }
+}
+.button {
+    --width: 150px;
+    --height: 55px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: green;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "Arial";
+    transition: background 0.3s;
+  }
+  
+  .button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #555;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+  
+  .button::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #555;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  }
+  
+  .button::after,.button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-wrapper,.text,.icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+  
+  .text {
+    top: 0
+  }
+  
+  .text,.icon {
+    transition: top 0.5s;
+  }
+  
+  .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .button:hover {
+    background: #222;
+  }
+  
+  .button:hover .text {
+    top: -100%;
+  }
+  
+  .button:hover .icon {
+    top: 0;
+  }
+  
+  .button:hover:before,.button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+  
+  
+  
+  
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .container svg {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: all 0.3s;
+    fill: #666;
+  }
+  
+  .container svg:hover {
+    transform: scale(1.1);
+  }
+  
+  .container input:checked ~ svg {
+    fill: #E3474F;
+  }
+  .text_card{
+    font-size: 25px;
+    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: green  ;
+  }
+  
+  @media only screen and (max-width:750px){
+
+    
+    .navLinks{
+   
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      
+    }
+
+    
+#buscar{
+  margin-top: 25%;
+ 
+}
+body{
+
+width: 96%;
+
+}
+
+
+
+  }
